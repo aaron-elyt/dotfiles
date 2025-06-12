@@ -88,7 +88,6 @@ install_packages() {
         "fish"
         
         # Color theming
-        "wallust"
         "matugen"
         
         # System info and utilities
@@ -108,7 +107,8 @@ install_packages() {
         "nwg-look"
         "qt5ct"
         "qt6ct"
-        "kvantum"
+        "kvantum-qt5"
+        "kvantum-qt6"
         
         # Audio
         "pipewire"
@@ -124,7 +124,7 @@ install_packages() {
         "slurp"
         "swappy"
         "mousepad"
-        "snapd"          # Added for snap support
+        "snapd"
     )
     
     # Install official packages
@@ -134,12 +134,12 @@ install_packages() {
     local aur_packages=(
         "ml4w-hyprland"
         "waypaper"
-        "anyrun"
-        "fuzzel"
+        "wallust"
         "grimblast-git"
         "hyprshade"
         "textsnatcher"
-        "wallust"
+        "anyrun"
+        "fuzzel"
         # Fonts
         "ttf-gabarito-git"
         "ttf-material-symbols-variable-git"
@@ -151,42 +151,6 @@ install_packages() {
     
     log "Installing AUR packages..."
     yay -S --needed --noconfirm "${aur_packages[@]}"
-    
-    # Enable snapd
-    log "Enabling snapd service..."
-    sudo systemctl enable --now snapd.socket
-    sudo systemctl enable --now snapd.apparmor
-}
-
-# Setup ZSH and plugins
-setup_zsh() {
-    log "Setting up ZSH and plugins..."
-    
-    # Install Oh My Zsh if not present
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    fi
-    
-    # Install ZSH plugins
-    ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-    
-    # Install fast-syntax-highlighting
-    if [ ! -d "$ZSH_CUSTOM/plugins/fast-syntax-highlighting" ]; then
-        git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
-            "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
-    fi
-    
-    # Install zsh-autosuggestions
-    if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-        git clone https://github.com/zsh-users/zsh-autosuggestions.git \
-            "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
-    fi
-    
-    # Install zsh-syntax-highlighting
-    if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-            "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-    fi
 }
 
 # Setup dotfiles
@@ -359,7 +323,6 @@ main() {
     update_system
     install_yay
     install_packages
-    setup_zsh
     setup_dotfiles
     setup_shell
     setup_ml4w
