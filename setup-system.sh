@@ -87,8 +87,7 @@ install_packages() {
         "zsh"
         "fish"
         
-        # Color theming
-        "matugen"
+        # Color theming (matugen comes from AUR below)
         
         # System info and utilities
         "fastfetch"
@@ -98,7 +97,7 @@ install_packages() {
         # File managers and utilities
         "thunar"
         "nautilus"
-        "waypaper"
+        # 'waypaper' comes from AUR below
         
         # Fonts and theming
         "noto-fonts"
@@ -147,6 +146,7 @@ install_packages() {
         "ttf-readex-pro"
         "ttf-rubik-vf"
         "ttf-victor-mono"
+        "matugen"
     )
     
     log "Installing AUR packages..."
