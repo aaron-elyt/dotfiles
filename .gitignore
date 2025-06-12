@@ -55,4 +55,7 @@ Thumbs.db
 .kube/
 *.key
 *.pem
-*.cert 
+*.cert
+
+# Allow wallpapers even if images are globally ignored
+!/.config/ml4w/wallpapers/** 
