@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Webflow
+Exec=chromium --user-data-dir=/home/aaron/.config/chromium-webflow --class=webflow --app=https://webflow.com/dashboard
+Icon=webflow
+Terminal=false
+Type=Application
+Categories=Development;WebDesign;
+StartupWMClass=webflow

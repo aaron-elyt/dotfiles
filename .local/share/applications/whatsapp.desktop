@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=WhatsApp
+Exec=chromium --user-data-dir=/home/aaron/.config/chromium-whatsapp --class=whatsapp --profile-directory=Default --app=https://web.whatsapp.com
+Icon=whatsapp
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;
+StartupWMClass=whatsapp
