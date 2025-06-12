@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Clickup
+Exec=chromium --app=https://app.clickup.com/ --class=clickup
+Icon=~/.local/share/icons/clickup1.jpg
+Type=Application
+Categories=productivity;Office;
+StartupNotify=true
+StartupWMClass=clickup

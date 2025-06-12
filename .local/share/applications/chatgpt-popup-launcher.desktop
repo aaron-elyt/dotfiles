@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ChatGPT Popup
+Comment=Quick ChatGPT popup for instant AI assistance
+Exec=/home/aaron/.config/hypr/scripts/chatgpt-popup.sh toggle
+Icon=applications-internet
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;AI;
+Keywords=chatgpt;ai;popup;assistant;
+StartupNotify=true
+NoDisplay=false 

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Figma
+Exec=chromium --app=https://www.figma.com --class=figma
+Icon=figma
+Type=Application
+Categories=Graphics;Design;
+StartupNotify=true
+StartupWMClass=figma

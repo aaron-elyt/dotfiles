@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ChatGPT
+Exec=chromium --app=https://chat.openai.com/?temporary-chat=true
+Icon=chromium
+Terminal=false
+Type=Application
+Categories=Utility;WebApplication;
+StartupWMClass=chromium
+
