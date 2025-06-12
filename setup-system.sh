@@ -124,6 +124,7 @@ install_packages() {
         "slurp"
         "swappy"
         "mousepad"
+        "snapd"          # Added for snap support
     )
     
     # Install official packages
@@ -135,10 +136,26 @@ install_packages() {
         "waypaper"
         "anyrun"
         "fuzzel"
+        "grimblast-git"
+        "hyprshade"
+        "textsnatcher"
+        "wallust"
+        # Fonts
+        "ttf-gabarito-git"
+        "ttf-material-symbols-variable-git"
+        "ttf-ms-fonts"
+        "ttf-readex-pro"
+        "ttf-rubik-vf"
+        "ttf-victor-mono"
     )
     
     log "Installing AUR packages..."
     yay -S --needed --noconfirm "${aur_packages[@]}"
+    
+    # Enable snapd
+    log "Enabling snapd service..."
+    sudo systemctl enable --now snapd.socket
+    sudo systemctl enable --now snapd.apparmor
 }
 
 # Setup ZSH and plugins
