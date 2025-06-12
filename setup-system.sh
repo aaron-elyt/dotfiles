@@ -76,7 +76,6 @@ install_packages() {
         "rofi-wayland" 
         "swaync"
         "swww"
-        "wlogout"
         "xdg-desktop-portal-hyprland"
         "hyprland-qtutils"
         "nwg-dock-hyprland"
@@ -106,8 +105,6 @@ install_packages() {
         "nwg-look"
         "qt5ct"
         "qt6ct"
-        "kvantum-qt5"
-        "kvantum-qt6"
         
         # Audio
         "pipewire"
@@ -123,7 +120,6 @@ install_packages() {
         "slurp"
         "swappy"
         "mousepad"
-        "snapd"
     )
     
     # Install official packages
