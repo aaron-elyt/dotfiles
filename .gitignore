@@ -1,0 +1,58 @@
+# Sensitive files
+*.log
+*.cache
+**/cache/
+**/logs/
+**/*.log
+**/.cache/
+
+# Large/binary files
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.gif
+**/*.mp4
+**/*.mkv
+**/*.iso
+
+# Exclude certain config directories that are auto-generated or contain sensitive data
+.config/pulse/
+.config/systemd/
+.config/dconf/
+.config/session/
+.config/autostart/
+.config/chromium*/
+.config/teams/
+.config/Microsoft*/
+.config/yay/
+.config/go/
+.config/nvim/
+.config/github-copilot/
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package manager directories
+.npm/
+.cargo/
+.rustup/
+
+# Sensitive data
+.ssh/
+.gnupg/
+.aws/
+.kube/
+*.key
+*.pem
+*.cert 

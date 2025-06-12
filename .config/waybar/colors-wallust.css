@@ -1,0 +1,40 @@
+/*
+* Waybar Colors
+* Generated with Wallust
+*/
+
+/* Main color variables */
+@define-color background #4F5153;
+@define-color foreground #F4C2AA;
+@define-color primary #79879A;
+@define-color secondary #FA9566;
+@define-color accent #79879A;
+@define-color urgent #4F5D72;
+@define-color warning #B4705B;
+@define-color success #857375;
+@define-color surface #AB8777;
+@define-color surface_variant #F4C2AA;
+
+/* Transparency variants */
+@define-color blur_background alpha(#4F5153, 0.3);
+@define-color blur_background8 alpha(#4F5153, 0.8);
+@define-color surface_transparent alpha(#AB8777, 0.15);
+@define-color surface_hover alpha(#AB8777, 0.25);
+
+/* Individual colors for fine-tuning */
+@define-color color0 #4F5153;
+@define-color color1 #4F5D72;
+@define-color color2 #857375;
+@define-color color3 #B4705B;
+@define-color color4 #79879A;
+@define-color color5 #ABA19B;
+@define-color color6 #FA9566;
+@define-color color7 #F4C2AA;
+@define-color color8 #AB8777;
+@define-color color9 #4F5D72;
+@define-color color10 #857375;
+@define-color color11 #B4705B;
+@define-color color12 #79879A;
+@define-color color13 #ABA19B;
+@define-color color14 #FA9566;
+@define-color color15 #F4C2AA; 

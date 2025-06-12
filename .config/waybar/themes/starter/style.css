@@ -1,0 +1,94 @@
+/* Import wallust colors */
+@import "../../colors-wallust.css";
+
+* {
+  border: none;
+  border-radius: 2px;
+  min-height: 0;
+  font-family: "Iosevka Nerd Font", "monospace";
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0;
+}
+
+window#waybar {
+  background-color: rgba(14, 20, 21, 0.6);
+  border: 3px solid @primary;
+}
+
+/* Animations */
+@keyframes color-flash-red { 50% { color: @urgent; } }
+@keyframes color-flash-blue { 50% { color: @primary; } }
+@keyframes battery-charge { 50% { color: @success; } }
+
+/* Workspaces buttons base */
+#workspaces button {
+  background-color: transparent;
+  min-width: 20px;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 2px;
+}
+#workspaces button.active {
+  color: @accent;
+}
+#workspaces button:hover {
+  background-color: @surface_transparent;
+}
+
+#workspaces button.urgent,
+#battery.critical:not(.charging),
+#network.disconnected,
+#pulseaudio.muted,
+#bluetooth.disabled {
+  animation: color-flash-red 1.5s steps(2) infinite;
+}
+
+/* Fix margins on left/right workspace container edges */
+.modules-left > widget:first-child > #workspaces { margin-left: 0; }
+.modules-right > widget:last-child > #workspaces { margin-right: 0; }
+
+/* Main modules styling */
+#clock, #battery, #power-profiles-daemon, #backlight,
+#network, #pulseaudio, #custom-power, #bluetooth, #custom-mic {
+  border: 2px solid @primary;
+  background-color: @background;
+  margin: 7px;
+  min-width: 60px;
+  padding: 6px 5px;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+/* Hover effect for main modules */
+#clock:hover, #battery:hover, #power-profiles-daemon:hover, #backlight:hover,
+#network:hover, #pulseaudio:hover, #custom-power:hover, #bluetooth:hover,
+#custom-mic:hover {
+  background-color: @surface_hover;
+}
+
+/* Colors for specific modules */
+#clock, #battery, #pulseaudio, #custom-mic {
+  color: @accent;
+}
+#power-profiles-daemon.performance {
+  color: @urgent;
+}
+#power-profiles-daemon.balanced {
+  color: @accent;
+}
+#network, #custom-power, #bluetooth, #workspaces button {
+  color: @secondary;
+}
+#power-profiles-daemon, #backlight {
+     color: @primary;
+}
+
+/* Animations */
+#battery.charging, #battery.plugged {
+  animation: battery-charge 1.5s steps(2) infinite;
+}
+#pulseaudio.bluetooth {
+  animation: color-flash-blue 1.5s steps(2) infinite;
+}
