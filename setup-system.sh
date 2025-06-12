@@ -141,6 +141,37 @@ install_packages() {
     yay -S --needed --noconfirm "${aur_packages[@]}"
 }
 
+# Setup ZSH and plugins
+setup_zsh() {
+    log "Setting up ZSH and plugins..."
+    
+    # Install Oh My Zsh if not present
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    fi
+    
+    # Install ZSH plugins
+    ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+    
+    # Install fast-syntax-highlighting
+    if [ ! -d "$ZSH_CUSTOM/plugins/fast-syntax-highlighting" ]; then
+        git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+            "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
+    fi
+    
+    # Install zsh-autosuggestions
+    if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+        git clone https://github.com/zsh-users/zsh-autosuggestions.git \
+            "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+    fi
+    
+    # Install zsh-syntax-highlighting
+    if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+            "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+    fi
+}
+
 # Setup dotfiles
 setup_dotfiles() {
     log "Setting up dotfiles..."
@@ -311,6 +342,7 @@ main() {
     update_system
     install_yay
     install_packages
+    setup_zsh
     setup_dotfiles
     setup_shell
     setup_ml4w
